@@ -1,5 +1,10 @@
 public class Node {
-    public static void main(String[] args) {
-        System.out.println("linkedlist");
+
+    protected int data;
+    protected Node next;
+
+    public Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
     }
 }
