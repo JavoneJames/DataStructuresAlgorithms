@@ -21,7 +21,7 @@ public class LinkedList {
         else{
             Node cell = front;//creates a copy object of the current linkedlist
             while (cell.next != null)//loops through the list whilst there items
-                cell = cell.next;
+                cell = cell.next;//temp store data in the current node and iterates to the next node
             cell.next = new Node(i, null);//creates a new object that adds to the back
         }
     }
@@ -37,7 +37,7 @@ public class LinkedList {
 
     private void addToBack(int i)
     {
-        if (front == null)
+         if (front == null)
             front = back = new Node(i, null);
         else{
             back.next = new Node(i, null);
