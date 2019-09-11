@@ -1,9 +1,9 @@
-public class Node {
+class Node {
 
-    protected int data;
-    protected Node next;
+    private int data;
+    Node next;
 
-    public Node(int data, Node next) {
+    Node(int data, Node next) {
         this.data = data;
         this.next = next;
     }
