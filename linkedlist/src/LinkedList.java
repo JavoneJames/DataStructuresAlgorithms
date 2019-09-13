@@ -50,11 +50,14 @@ public class LinkedList {
         return counter;
     }
 
-    private void removeFront(){
-        if (front == null)
+    private void removeFront()
+    {
+        if (front == null)//if the front is null there's nothing to remove - throws exception
             throw new ListException("the list is empty");
-        front = front.next;
+        front = front.next;//replace the head node with the 'tail'
     }
+
+
 
 
 
