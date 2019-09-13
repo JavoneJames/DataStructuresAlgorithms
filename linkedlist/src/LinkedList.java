@@ -11,6 +11,7 @@ public class LinkedList {
 
     private void addToFront(int i)
     {
+
         front = new Node(i, front);//creates a new object that adds to the front
     }
 
@@ -24,6 +25,17 @@ public class LinkedList {
                 cell = cell.next;//temp store data in the current node and iterates to the next node
             cell.next = new Node(i, null);//creates a new object that adds to the back
         }
+    }
+
+    private int length()
+    {
+        Node cell = front;//create an object copy of the current linkedlist
+        int counter = 0;//to be used to count the length of the list
+        while (cell != null) {//loops and counts which the is not empty
+            counter++;
+            cell = cell.next;
+        }
+        return counter;
     }
 
     //The code below can be used if frequent calls to the addToBack method is expected
