@@ -38,6 +38,21 @@ public class LinkedList {
         return counter;
     }
 
+    private int occs(int i)//pass through the parameter what to look for in the list - could be different data types
+    {
+        Node cell = front;
+        int counter = 0;
+        while (cell != null) {//loops through the linkedlist
+            if (cell.data == i)//checks if the current element matches what is being looked for
+                counter++;//if so then increments the counter
+            cell = cell.next;//moves to the next reference point
+        }
+        return counter;
+    }
+
+
+
+
     //The code below can be used if frequent calls to the addToBack method is expected
     //This is because it is more efficient to store a reference to the last item in the list
     /*private void addToFront(int i)
