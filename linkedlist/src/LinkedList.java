@@ -57,6 +57,19 @@ public class LinkedList {
         front = front.next;//replace the head node with the 'tail'
     }
 
+    private void removeBack()
+    {
+        if (front == null)//checks if the front is empty - if it is then the object is empty
+            throw new ListException("the list is empty");
+        if (front.next == null)//if reference point is null then there's only one element in the list
+            front = null;//deletes the element by making it null
+        Node cell = front;
+        while(cell.next.next != null)//loops through the linkedlist - until it reaches the end
+            cell = cell.next;
+        cell.next = null;
+
+    }
+
 
 
 
