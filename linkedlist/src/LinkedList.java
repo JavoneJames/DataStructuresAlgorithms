@@ -67,7 +67,23 @@ public class LinkedList {
         while(cell.next.next != null)//loops through the linkedlist - until it reaches the end
             cell = cell.next;
         cell.next = null;
+    }
 
+    private boolean removeFirstOccu(int i)
+    {
+        if (front == null)//checks if the list is empty
+            throw new ListException("the list is empty");
+        if (front.data == i)//checks if the first element matches what is being looked for
+            front = front.next;
+        Node cell = front;
+        while (cell.next != null && cell.next.data != i)//loops while not null and the next element is not what is being looked for
+            cell = cell.next;
+        if (cell.next == null)//checks if reference point is null
+            throw new ListException("tried to remove " + i + " could not find it");
+        else{
+            cell.next = cell.next.next;
+            return true;
+        }
     }
 
 
