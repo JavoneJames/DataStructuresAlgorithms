@@ -15,16 +15,15 @@ public class LinkedList {
         front = new Node(i, front);//creates a new object that adds to the front
     }
 
-    private void addToBack(int i)
-    {
+    private void addToBack(int i) {
         if (front == null)//checks if the front is null - if so creates a new object that adds to the front
             front = new Node(i, null);
-        else{
-            Node cell = front;//creates a copy object of the current linkedlist
-            while (cell.next != null)//loops through the list whilst there items
-                cell = cell.next;//temp store data in the current node and iterates to the next node
-            cell.next = new Node(i, null);//creates a new object that adds to the back
-        }
+
+        Node cell = front;//creates a copy object of the current linkedlist
+        while (cell.next != null)//loops through the list whilst there items
+            cell = cell.next;//temp store data in the current node and iterates to the next node
+        cell.next = new Node(i, null);//creates a new object that adds to the back
+
     }
 
     private int length()
