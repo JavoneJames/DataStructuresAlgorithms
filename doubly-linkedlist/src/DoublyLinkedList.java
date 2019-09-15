@@ -24,4 +24,14 @@ public class DoublyLinkedList {
         }
     }
 
+    private void removeFront()
+    {
+        if (front == null)
+            throw new ListException("the list is empty");
+        front = front.next;
+        front.prev = front.next;
+    }
+
+
+
 }
