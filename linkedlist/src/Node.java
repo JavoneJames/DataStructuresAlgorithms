@@ -1,9 +1,9 @@
-class Node {
+class Node <E>{
 
-    int data;//store data to be added to the list
-    Node next;//a reference to the next object
+    E data;//store data to be added to the list
+    Node<E> next;//a reference to the next object
 
-    Node(int data, Node next) {
+    Node(E data, Node<E> next) {
         this.data = data;
         this.next = next;
     }

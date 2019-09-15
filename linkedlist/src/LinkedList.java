@@ -1,6 +1,6 @@
-public class LinkedList {
+public class LinkedList<E> {
 
-    private Node front;//object of the Node class
+    private Node <E>front;//object of the Node class
     //private Node back;
 
     private LinkedList()
@@ -9,26 +9,26 @@ public class LinkedList {
         //back  = null;//initialize the object to be null
     }
 
-    private void addToFront(int i)
+    private void addToFront(E i)
     {
 
-        front = new Node(i, front);//creates a new object that adds to the front
+        front = new Node<E>(i, front);//creates a new object that adds to the front
     }
 
-    private void addToBack(int i) {
+    private void addToBack(E i) {
         if (front == null)//checks if the front is null - if so creates a new object that adds to the front
-            front = new Node(i, null);
+            front = new Node<E>(i, null);
 
-        Node cell = front;//creates a copy object of the current linkedlist
+        Node<E> cell = front;//creates a copy object of the current linkedlist
         while (cell.next != null)//loops through the list whilst there items
             cell = cell.next;//temp store data in the current node and iterates to the next node
-        cell.next = new Node(i, null);//creates a new object that adds to the back
+        cell.next = new Node<E>(i, null);//creates a new object that adds to the back
 
     }
 
     private int length()
     {
-        Node cell = front;//create an object copy of the current linkedlist
+        Node<E> cell = front;//create an object copy of the current linkedlist
         int counter = 0;//to be used to count the length of the list
         while (cell != null) {//loops and counts which the is not empty
             counter++;
@@ -37,9 +37,9 @@ public class LinkedList {
         return counter;
     }
 
-    private int occs(int i)//pass through the parameter what to look for in the list - could be different data types
+    private int occs(E i)//pass through the parameter what to look for in the list - could be different data types
     {
-        Node cell = front;
+        Node<E> cell = front;
         int counter = 0;
         while (cell != null) {//loops through the linkedlist
             if (cell.data == i)//checks if the current element matches what is being looked for
@@ -62,19 +62,19 @@ public class LinkedList {
             throw new ListException("the list is empty");
         if (front.next == null)//if reference point is null then there's only one element in the list
             front = null;//deletes the element by making it null
-        Node cell = front;
+        Node<E> cell = front;
         while(cell.next.next != null)//loops through the linkedlist - until it reaches the end
             cell = cell.next;
         cell.next = null;
     }
 
-    private boolean removeFirstOccu(int i)
+    private boolean removeFirstOccu(E i)
     {
         if (front == null)//checks if the list is empty
             throw new ListException("the list is empty");
         if (front.data == i)//checks if the first element matches what is being looked for
             front = front.next;
-        Node cell = front;
+        Node<E> cell = front;
         while (cell.next != null && cell.next.data != i)//loops while not null and the next element is not what is being looked for
             cell = cell.next;
         if (cell.next == null)//checks if reference point is null
@@ -110,7 +110,7 @@ public class LinkedList {
     }*/
 
     public static void main(String[] args) {
-        LinkedList ll = new LinkedList();
+        LinkedList<Integer> ll = new LinkedList<>();
         ll.addToFront(1);
         ll.addToBack(2);
         ll.addToBack(3);
