@@ -3,7 +3,7 @@ public class ArrayStack<E> implements Stack<E> {
     private E[] arr;
     private int cursor;
 
-    public ArrayStack()
+    private ArrayStack()
     {
         arr = (E[]) new Object[20];
         cursor = -1;
@@ -18,7 +18,14 @@ public class ArrayStack<E> implements Stack<E> {
     @Override
     public void push(E x)
     {
-
+        cursor++;
+        if (cursor == arr.length){
+            E[] temp = (E[])new Object[arr.length + 1];
+            for (int i = 0; i < arr.length; i++)
+                temp[i] = arr[i];
+            arr = temp;
+        }
+        arr[cursor] = x;
     }
 
     @Override
@@ -35,4 +42,6 @@ public class ArrayStack<E> implements Stack<E> {
             throw new StackException("top");
         return arr[cursor];
     }
+
+
 }
