@@ -40,38 +40,17 @@ public class DoublyLinkedList {
     {
         if (front == null)
             throw new ListException("the list is empty");
-        if (front.next == null){
+        if (front.next == null){//if true then only one item in the list - delete that object
             front = null;
         }else {
             Node cell = front;
-            while (cell.next.next != null) {
-                cell = cell.next;
+            while (cell.next.next != null) {//loops until reaching the last node
+                cell = cell.next;//shifts between nodes in the list
             }
-            cell.next = null;
+            cell.next = null;//last node is found and deleted
         }
     }
 
-    private void display()
-    {
-        Node cell = front;
-        while (cell != null) {
-            System.out.println(cell.data);
-            cell = cell.next;
-        }
-    }
 
-    public static void main(String[] args)
-    {
-        DoublyLinkedList dll = new DoublyLinkedList();
-       dll.addToFront(2);
-       dll.addToFront(1);
-       dll.addToBack(3);
-       dll.addToBack(4);
-       dll.display();
-       dll.removeFront();
-       dll.display();
-        dll.removeFront();
-        dll.display();
-    }
 
 }
