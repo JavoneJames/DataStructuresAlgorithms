@@ -32,8 +32,8 @@ public class DoublyLinkedList {
     {
         if (front == null)
             throw new ListException("the list is empty");
-        front = front.next;
-        front.prev = null;
+        front = front.next;//replace the front node with the node after it - to delete it
+        front.prev = null;//prev becomes null - since front node doesnt have no node before it
     }
 
     private void removeBack()
