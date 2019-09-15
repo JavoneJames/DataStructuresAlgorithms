@@ -3,16 +3,21 @@ public class ArrayStack<E> implements Stack<E> {
     private E[] arr;
     private int cursor;
 
-    public ArrayStack() {
+    public ArrayStack()
+    {
+        arr = (E[]) new Object[20];
+        cursor = -1;
     }
 
     @Override
-    public boolean isEmpty() {
-        return cursor == -1;
+    public boolean isEmpty()
+    {
+        return (cursor == -1);
     }
 
     @Override
-    public void push(E x) {
+    public void push(E x)
+    {
 
     }
 
@@ -23,6 +28,8 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public E top() {
-        return null;
+        if (cursor == -1)
+            throw new StackException("top");
+        return arr[cursor];
     }
 }
