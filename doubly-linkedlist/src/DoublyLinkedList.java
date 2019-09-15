@@ -42,13 +42,10 @@ public class DoublyLinkedList {
             throw new ListException("the list is empty");
         if (front.next == null){
             front = null;
-            front.prev = null;
         }else {
             Node cell = front;
             while (cell.next.next != null) {
                 cell = cell.next;
-                if (cell.next.next != null)
-                    cell.prev = cell.next;
             }
             cell.next = null;
         }
@@ -66,18 +63,13 @@ public class DoublyLinkedList {
     public static void main(String[] args)
     {
         DoublyLinkedList dll = new DoublyLinkedList();
-        dll.addToFront(2);
-        dll.addToBack(3);
-        dll.addToFront(1);
-        dll.addToBack(4);
-        dll.addToBack(5);
-        dll.display();
-        dll.removeBack();
-        System.out.println();
-        dll.display();
-        dll.removeBack();
-        System.out.println();
-        dll.display();
+       dll.addToFront(2);
+       dll.addToFront(1);
+       dll.addToBack(3);
+       dll.addToBack(4);
+       dll.display();
+       dll.removeBack();
+       dll.display();
     }
 
 }
