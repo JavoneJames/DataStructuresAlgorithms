@@ -1,10 +1,10 @@
-class Node {
+class Node<E> {
 
-    int data;
-    Node next;
-    Node prev;
+    E data;
+    Node<E> next;
+    Node<E> prev;
 
-    Node(int data, Node next, Node prev) {
+    Node(E data, Node<E> next, Node<E> prev) {
         this.data = data;
         this.next = next;
         this.prev = prev;

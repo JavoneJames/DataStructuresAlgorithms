@@ -1,29 +1,29 @@
-public class DoublyLinkedList {
+public class DoublyLinkedList<E> {
 
-    private Node front;
+    private Node<E> front;
 
     private DoublyLinkedList(){
         front = null;
     }
 
-    private void addToFront(int i)
+    private void addToFront(E i)
     {
         if (front != null) {
-            front = new Node(i, front, null);
+            front = new Node<E>(i, front, null);
             front.next.prev = front;
         }else
-            front = new Node(i, front, null);
+            front = new Node<E>(i, front, null);
     }
 
-    private void addToBack(int i)
+    private void addToBack(E i)
     {
         if (front == null)//checks if the front is null
-          front = new Node(i, front, null);//creates a new object and adds to the front
+          front = new Node<E>(i, front, null);//creates a new object and adds to the front
         else{
             Node cell = front;
             while (cell.next != null)//loops through list
                 cell = cell.next;//change to the next node
-            cell.next = new Node(i, null, cell);//create a new object, adds element,
+            cell.next = new Node<E>(i, null, cell);//create a new object, adds element,
             // next is null and prev points to prev head
         }
     }
