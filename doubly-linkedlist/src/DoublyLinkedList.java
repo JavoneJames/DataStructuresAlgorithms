@@ -32,6 +32,24 @@ public class DoublyLinkedList {
         front.prev = front.next;
     }
 
+    private void removeBack()
+    {
+        if (front == null)
+            throw new ListException("the list is empty");
+        if (front.next == null){
+            front = null;
+            front.prev = null;
+        }else {
+            Node cell = front;
+            while (cell.next.next != null) {
+                cell = cell.next;
+                if (cell.next.next != null)
+                    cell.prev = cell.next;
+            }
+            cell.next = null;
+        }
+    }
+
 
 
 }
