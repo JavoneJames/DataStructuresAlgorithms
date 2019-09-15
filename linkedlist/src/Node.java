@@ -11,7 +11,7 @@ class Node <E>{
 
 class ListException extends RuntimeException{
 
-    public ListException(String s){
+    ListException(String s){
         super(s);
     }
 }

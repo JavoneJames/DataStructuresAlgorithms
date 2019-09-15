@@ -109,12 +109,5 @@ public class LinkedList<E> {
         }
     }*/
 
-    public static void main(String[] args) {
-        LinkedList<Integer> ll = new LinkedList<>();
-        ll.addToFront(1);
-        ll.addToBack(2);
-        ll.addToBack(3);
-    }
-
 
 }
