@@ -33,7 +33,7 @@ public class DoublyLinkedList {
         if (front == null)
             throw new ListException("the list is empty");
         front = front.next;
-        front.prev = front.next;
+        front.prev = null;
     }
 
     private void removeBack()
@@ -68,8 +68,10 @@ public class DoublyLinkedList {
        dll.addToBack(3);
        dll.addToBack(4);
        dll.display();
-       dll.removeBack();
+       dll.removeFront();
        dll.display();
+        dll.removeFront();
+        dll.display();
     }
 
 }
