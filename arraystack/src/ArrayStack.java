@@ -23,7 +23,10 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public void pop() {
-
+        if (cursor == -1)
+            throw new StackException("pop");
+        arr[cursor] = null;
+        cursor--;
     }
 
     @Override
