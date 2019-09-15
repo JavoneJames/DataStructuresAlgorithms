@@ -18,11 +18,12 @@ public class LinkedList<E> {
     private void addToBack(E i) {
         if (front == null)//checks if the front is null - if so creates a new object that adds to the front
             front = new Node<E>(i, null);
-
-        Node<E> cell = front;//creates a copy object of the current linkedlist
-        while (cell.next != null)//loops through the list whilst there items
-            cell = cell.next;//temp store data in the current node and iterates to the next node
-        cell.next = new Node<E>(i, null);//creates a new object that adds to the back
+        else{
+            Node<E> cell = front;//creates a copy object of the current linkedlist
+            while (cell.next != null)//loops through the list whilst there items
+                cell = cell.next;//temp store data in the current node and iterates to the next node
+            cell.next = new Node<E>(i, null);//creates a new object that adds to the back
+        }
 
     }
 
@@ -62,10 +63,12 @@ public class LinkedList<E> {
             throw new ListException("the list is empty");
         if (front.next == null)//if reference point is null then there's only one element in the list
             front = null;//deletes the element by making it null
-        Node<E> cell = front;
-        while(cell.next.next != null)//loops through the linkedlist - until it reaches the end
-            cell = cell.next;
-        cell.next = null;
+        else {
+            Node<E> cell = front;
+            while(cell.next.next != null)//loops through the linkedlist - until it reaches the end
+                cell = cell.next;
+            cell.next = null;
+        }
     }
 
     private boolean removeFirstOccu(E i)
@@ -84,10 +87,6 @@ public class LinkedList<E> {
             return true;
         }
     }
-
-
-
-
 
 
     //The code below can be used if frequent calls to the addToBack method is expected
