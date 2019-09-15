@@ -8,7 +8,11 @@ public class DoublyLinkedList {
 
     private void addToFront(int i)
     {
-        front = new Node(i, front, null);
+        if (front != null) {
+            front = new Node(i, front, null);
+            front.next.prev = front;
+        }else
+            front = new Node(i, front, null);
     }
 
     private void addToBack(int i)
@@ -50,6 +54,30 @@ public class DoublyLinkedList {
         }
     }
 
+    private void display()
+    {
+        Node cell = front;
+        while (cell != null) {
+            System.out.println(cell.data);
+            cell = cell.next;
+        }
+    }
 
+    public static void main(String[] args)
+    {
+        DoublyLinkedList dll = new DoublyLinkedList();
+        dll.addToFront(2);
+        dll.addToBack(3);
+        dll.addToFront(1);
+        dll.addToBack(4);
+        dll.addToBack(5);
+        dll.display();
+        dll.removeBack();
+        System.out.println();
+        dll.display();
+        dll.removeBack();
+        System.out.println();
+        dll.display();
+    }
 
 }
