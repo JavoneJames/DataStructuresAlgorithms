@@ -187,3 +187,4 @@ arraystack/arraystack.iml
 doubly-linkedlist/doubly-linkedlist.iml
 stack/stack.iml
 stack/src/notes
+out/*
