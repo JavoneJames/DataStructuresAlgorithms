@@ -24,11 +24,6 @@ public class DoublyLinkedList<T> {
         return front == null || back == null;
     }
     public static void main(String[] args) {
-        var linkedList = new DoublyLinkedList();
-        linkedList.addToFront(2);
-        linkedList.addToFront(5);
-        linkedList.addToBack(5);
-        linkedList.addToBack(2);
-        //linkedList.search();
+
     }
 }
