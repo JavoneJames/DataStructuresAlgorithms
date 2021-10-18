@@ -1,17 +1,9 @@
-class Node <E>{
+public class Node <T>{
+    T data;
+    Node<T> next;
 
-    E data;//store data to be added to the list
-    Node<E> next;//a reference to the next object
-
-    Node(E data, Node<E> next) {
+    Node(T data, Node<T> next){
         this.data = data;
         this.next = next;
-    }
-}
-
-class ListException extends RuntimeException{
-
-    ListException(String s){
-        super(s);
     }
 }
