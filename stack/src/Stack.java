@@ -1,8 +1,9 @@
-public interface Stack<E> {
+public interface Stack<T> {
     boolean isEmpty();
-    void push(E x);
+    boolean isFull();
+    void push(T x);
     void pop();
-    E top();
+    T top();
 }
 
 class StackException extends RuntimeException {
