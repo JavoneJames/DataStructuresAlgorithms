@@ -183,3 +183,6 @@ linkedlist/.idea/*
 linkedlist/linkedlist.iml
 linkedlist/src/notes
 doubly-linkedlist/src/notes
+arraystack/arraystack.iml
+doubly-linkedlist/doubly-linkedlist.iml
+stack/stack.iml
