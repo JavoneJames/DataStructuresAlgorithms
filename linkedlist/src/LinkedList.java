@@ -40,19 +40,7 @@ public class LinkedList<T> {
         }
         return counter;
     }
-    @Override
-    public String toString() {
-        return "LinkedList{" +
-                "front=" + front +
-                ", back=" + back +
-                '}';
-    }
-
     public static void main(String[] args) {
-        var list = new LinkedList<>();
-        list.addToFront(2);
-        list.addToFront(5);
-        //list.addToBack(5);
-        System.out.println(list.isEmpty());
+
     }
 }

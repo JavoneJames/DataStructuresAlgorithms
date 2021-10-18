@@ -1,18 +1,10 @@
-class Node<E> {
-
-    E data;
-    Node<E> next;
-    Node<E> prev;
-
-    Node(E data, Node<E> next, Node<E> prev) {
+public class Node<T> {
+    Node<T> prev;
+    T data;
+    Node<T> next;
+    Node(Node<T> prev, T data, Node<T> next){
+        this.prev = prev;
         this.data = data;
         this.next = next;
-        this.prev = prev;
     }
-}
-
-class ListException extends RuntimeException{
-
-    ListException(String s){super(s);}
-
 }
