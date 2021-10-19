@@ -7,7 +7,7 @@ public class Node<T>{
         left = null;
         right = null;
     }
-    Node(T i, Node<T> left, Node<T> right){
+    Node(T i, Node<T> left,  Node<T> right){
         data = i;
         this.left = left;
         this.right = right;
