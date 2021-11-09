@@ -1,5 +1,6 @@
+
 public class BinaryTree<T> {
-    private Node<T> root;
+    private final Node<T> root;
 
     private BinaryTree() {
         root = null;
@@ -45,7 +46,7 @@ public class BinaryTree<T> {
     }
     /*@Override
     public String toString() {
-        return "BinaryTree{"
+        return "java.BinaryTree{"
                 + "left=" + leftChild()
                 + "root=" + value()
                 + "right=" + rightChild()
