@@ -23,7 +23,5 @@ public class DoublyLinkedList<T> {
     private boolean isEmpty(){
         return front == null || back == null;
     }
-    public static void main(String[] args) {
 
-    }
 }

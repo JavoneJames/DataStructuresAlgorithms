@@ -43,7 +43,4 @@ public class ArrayQueue<T> implements Queue<T> {
         return arr[frontCursor];
     }
 
-    public static void main(String[] args) {
-
-    }
 }
