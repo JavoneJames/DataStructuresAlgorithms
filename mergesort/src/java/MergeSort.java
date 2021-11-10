@@ -10,12 +10,12 @@ public class MergeSort {
       arr[i] = random.nextInt(100) + 1;
     }
     System.out.println(Arrays.toString(arr));
-    int[] result = mergeSort(arr);
+    mergeSort(arr);
     System.out.println(Arrays.toString(arr));
   }
 
-  private static int[] mergeSort(int[] arr) {
-    if (arr.length <= 1) return arr;
+  private static void mergeSort(int[] arr) {
+    if (arr.length <= 1) return;
     int midIndex = arr.length / 2;
     int[] leftArray = new int[midIndex];
     int[] rightArray = new int[arr.length - midIndex];
@@ -27,7 +27,7 @@ public class MergeSort {
     }
     mergeSort(leftArray);
     mergeSort(rightArray);
-    return mergeTogether(arr, leftArray, rightArray);
+    mergeTogether(arr, leftArray, rightArray);
   }
 
   private static int[] mergeTogether(int[] array, int[] leftArray,
