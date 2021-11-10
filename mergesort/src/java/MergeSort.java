@@ -30,8 +30,8 @@ public class MergeSort {
     mergeTogether(arr, leftArray, rightArray);
   }
 
-  private static int[] mergeTogether(int[] array, int[] leftArray,
-                                     int[] rightArray) {
+  private static void mergeTogether(int[] array, int[] leftArray,
+                                    int[] rightArray) {
 
     int left = 0, right = 0, index = 0;
     while (left < leftArray.length && right < rightArray.length) {
@@ -54,7 +54,6 @@ public class MergeSort {
       right++;
       index++;
     }
-    return array;
   }
 
 
