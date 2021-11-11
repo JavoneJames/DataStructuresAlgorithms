@@ -18,9 +18,15 @@ public class BubbleSort {
   // is smaller than the right index
   private static void bubbleSort(int[] arrayOfNumbers) {
     if (arrayOfNumbers.length <= 1) return;
-    for (int i = 0; i < arrayOfNumbers.length - 1; i++) {
-      if (arrayOfNumbers[i] > arrayOfNumbers[i + 1]) {
-        swapNumbers(arrayOfNumbers, i);
+    boolean running = true;
+    while (running) {//while loop will reiterate if two unswap pairs are
+      // found to check for more pairs
+      running = false;
+      for (int i = 0; i < arrayOfNumbers.length - 1; i++) {
+        if (arrayOfNumbers[i] > arrayOfNumbers[i + 1]) {
+          running = true;
+          swapNumbers(arrayOfNumbers, i);
+        }
       }
     }
   }
